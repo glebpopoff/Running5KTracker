@@ -1,0 +1,930 @@
+/*#####################################################################################
+CSS RESET 
+#######################################################################################*/
+
+html, body, div, span, 
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+img, ins, kbd, q, s, samp,
+small, strike, strong, 
+dl, dt, dd, fieldset, form, label, legend,
+caption {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: small;
+	background: transparent;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.calendar_date_item
+{
+	color: #4684EE;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#user_usage_name
+{
+	font-size: 200%;
+	background: #fff;
+	color: #FF0000;
+	font-weight: bold;
+	padding: 5px 5px 5px 5px;
+}
+
+.calendar_date_item_miles
+{
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* Style below fix Superscript padding issues in all browsers */
+sup,
+sub {
+	height: 0;
+	line-height: 1;
+	vertical-align: baseline;
+	position: relative;
+}
+sup {bottom: 1ex;}
+sub {top: .5ex;}
+
+/* Hidden style for screen readers */
+.skipNav {
+	position:absolute;
+	left:0px;
+	top:-500px;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+}
+
+/*#####################################################################################
+UNIVERSAL CONTENT STYLES 
+#######################################################################################*/
+
+a:link,
+a:visited{
+	color:#00F;
+	text-decoration:none;
+}
+a:hover,
+a:visited:hover{
+	color:#666666;
+	text-decoration:underline;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family:arial,helvetica,sans-serif;
+	color:#fff;
+}
+h1 {
+	margin:0px 0px 15px 0px;
+	font-size:180%;
+	line-height:115%;
+	color:#fff;
+	font-weight:normal;
+}
+h2 {
+	margin:0px 0px 10px 0px;
+	font-size:140%;
+	line-height:115%;
+	color:#fff;
+	font-weight:bold;
+}
+h3 {
+	margin:0px 0px 5px 0px;
+	font-size:100%;
+	line-height:110%;
+	font-weight:bold;
+}
+h4 {
+	margin:0px 0px 0px 0px;
+	font-size:100%;
+	line-height:100%;
+	font-weight:bold;
+}
+hr {
+	border-right: #000000 0px solid;
+	border-top: #666666 1px dotted;
+	border-left: #000000 0px solid;
+	border-bottom: #000000 0px solid;
+	color: #666666;
+	height: 1px;
+}
+p {
+	margin: 5px 0px 15px 0px;
+}
+p.intro {
+	font-size:115%;
+	line-height:120%;
+}
+ul {
+	margin:0px 0px 20px 0px;
+	padding:0;
+	list-style: square none;
+}
+ul li {
+	margin:0;
+	padding:2px 0px 2px 20px;
+	list-style:none;
+	background:url(/static/images/bullet.gif) no-repeat 0px 0px;
+}
+ol {
+	margin:0px 0px 20px 0px;
+	padding:0px 0px 0px 10px;
+}
+ol li {
+	margin:0px 0px 0px 15px;
+	padding:2px 0px 2px 0px;
+}
+.photoLeft {
+	float: left;
+	margin: 5px 15px 15px 0px;
+}
+.photoRight {
+	float: right;
+	margin: 5px 0px 15px 15px;
+}
+.floatRight {
+	float: right;
+}
+.floatLeft {
+	float: left;
+}
+.block {
+	display:block;
+	float:left;
+	width:100%;
+}
+.sectionDivider {
+	display:block;
+	float:left;
+	width:100%;
+	padding:15px 0px 0px 0px;
+	margin:0px 0px 15px 0px;
+	border-bottom:1px dotted #686868;
+}
+
+/*#####################################################################################
+INTERFACE SHELL STYLES
+#######################################################################################*/
+
+body {
+	font-family:Arial, Helvetica, sans-serif;
+	background: #dcdcdc url(/static/images/page_bg.gif) repeat-x left top;
+	color:#333333;
+	text-align:left;
+}
+.mainContainer {
+	margin-right: auto;
+	margin-left: auto;
+	width: 960px;
+	text-align: left;
+	padding:0px 10px 0px 10px;
+}
+.mastHead {
+	width: 960px;
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	display:block;
+	float:left;
+	height:200px;
+}
+.homeContentContainer {
+	display:block;
+	float:left;
+	width:960px;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+.homeContent {
+	display:block;
+	float:left;
+	width:960px;
+	margin:40px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+.logo {
+	display:block;
+	float:left;
+	width:auto;
+	padding:16px 0px 0px 0px;
+}
+.rules {
+	display:block;
+	float:right;
+	width:600px;
+	padding:20px 0px 0px 0px;
+	color:#fff;
+}
+.tableContainer {
+	display:block;
+	float:left;
+	padding:0px 0px 0px 0px;
+	margin: 0px 0px 30px 0px;
+}
+.graphContainer {
+	display:block;
+	float:left;
+	width:960px;
+	padding:0px 0px 30px 0px;
+}
+.globalContainer {
+	display:block;
+	float:right;
+	width:530px;
+	margin:0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#flash {
+	display:block;
+	float:left;
+	width:720px;
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+
+/* Caneldar Styles
+--------------------------------------------------------------------------------------*/
+#monthtable thead {
+	background:#0f1c2b;
+	text-align:center;
+	color:#fff;
+	font-weight:bold;
+	font-size:16px;
+}
+#monthtable thead th {
+	padding:10px 5px 10px 5px;
+	border-left:1px solid #dbdbdb;
+}
+#monthtable thead th:nth-child(1) {
+	border-left:none;
+}
+#monthtable td {
+	width:120px;
+	height:60px;
+	border-left:1px solid #dbdbdb;
+	border-bottom:1px solid #dbdbdb;
+	background:#fff;
+	padding:5px 5px 5px 5px;
+}
+#monthtable td:nth-child(1) {
+	border-left:none;
+}
+#monthtable td:nth-child(even) {
+/*	background:#f1f1f1;*/
+}
+#monthtable tr.totals td {
+	border-bottom:none;
+}
+td .calendar-date{
+	text-align:center;
+}
+td .position {
+	position:relative;
+	width:120px;
+	height:60px;
+	display:block;
+}
+td .positionInput {
+	position:absolute;
+	top:30px;
+	right:0px;
+}
+td .position .day{
+	position:absolute;
+	top:20px;
+	left:40px;
+	font-size:16px;
+	color:#91affb;
+}
+td .position .date{
+	position:absolute;
+	top:0px;
+	right:0px;
+	font-size:20px;
+	font-weight:bold;
+	color:#0F1C2B;
+	font-style: italic;
+}
+td .position .date2{
+	position:absolute;
+	top:0px;
+	right:0px;
+	font-size:14px;
+	font-weight:bold;
+	color:#4684EE;
+	font-style: italic;
+}
+td .enterMiles {
+	text-align:center;
+	font-size:15px;
+}
+td .positionCenter {
+	text-align:center;
+}
+#monthtable td:hover {
+	background:#D6E779;
+}
+#monthtable td:hover .day {
+	color:#0F1C2B;
+}
+.input-text{
+}
+.no-miles{
+	font-size:16px;
+	position:absolute;
+	top:22px;
+	left:10px;
+}
+.no-miles strong{
+	font-size:20px;
+}
+
+#monthtable td.calendar-date-today{
+	background:#f7f573;
+	cursor:pointer;
+}
+#monthtable td.calendar-date-past {
+	cursor:pointer;
+}
+#monthtable td.calendar-date-today .day,
+#monthtable td.calendar-date-today .date {
+	color:#0F1C2B;
+}
+#monthtable td.calendar-date-future{
+	background: #f1f1f1;
+	cursor:default;
+}
+#monthtable td.calendar-date-future:hover{
+	background: #f1f1f1;
+	cursor:default;
+}
+#monthtable td.calendar-date-future .day,
+#monthtable td.calendar-date-future:hover .day,
+#monthtable td.calendar-date-future .date,
+#monthtable td.calendar-date-future:hover .date {
+	color:#dedede;
+}
+#monthtable tr.totals td {
+	background:#999;
+	height:30px;
+}
+.total-miles{
+	text-align: center;
+	color:#fff;
+	font-weight: bold;
+	font-size:15px;
+}
+.milesContainer {
+	display:block;
+	float:left;
+	width:300px;
+	padding:0px 0px 0px 5px;
+}
+
+.acsysLeaderContainer {
+	display:block;
+	float:left;
+	width:260px;
+	height:135px;
+	padding:10px 20px 0px 20px;
+	background:#ffffff;
+	margin-top:12px;
+	text-align:center;
+}
+.acsysLeaderContainer .lgTotal {
+	color:#4684EE;
+	font-size:60px;
+	font-weight:normal;
+	font-style:italic;
+}
+.acsysLeaderContainer .smText {
+	color:#0F1C2B;
+	font-size:18px;
+	font-weight:normal;
+	padding:0px 0px 10px 0px;
+}
+
+.acsysTotalContainer {
+	display:block;
+	float:left;
+	width:260px;
+	height:135px;
+	padding:10px 20px 0px 20px;
+	background:#ffffff;
+	margin-top:12px;
+	text-align:center;
+}
+.acsysTotalContainer .lgTotal {
+	color:#4684EE;
+	font-size:80px;
+	font-weight:normal;
+	font-style:italic;
+}
+.acsysTotalContainer .smText {
+	color:#0F1C2B;
+	font-size:18px;
+	font-weight:normal;
+	padding:0px 0px 10px 0px;
+	
+}
+#acsys_milesgraph_div {
+	width:960px;
+	margin:0px auto 20px auto;
+}
+input.saveBtn {
+	background:#4684EE;
+	color:#fff;
+	padding:2px;
+	border:none;
+	cursor:pointer;
+}
+
+/*#####################################################################################
+NAVIGATION STYLES
+#######################################################################################/*
+
+/* Global Nav
+-------------------------------------------------------------------------------------*/
+
+.globalNavContainer {
+	color: #000;
+	font-size: 11px;
+	float:right;
+	padding:0px 0px 0px 0px;
+	font-weight:bold;
+	height: 30px;
+}
+
+.globalNavContainer ul { 
+	margin: 0; 
+	border: none;
+	list-style: none;
+}
+
+.globalNavContainer li {
+	float:left;
+	padding:2px 0px 2px 0px;
+	line-height:normal;
+	text-indent:0;
+	border-right: solid 1px #666666;
+	font-weight:bold;
+}
+.globalNavContainer li.end {
+	float:left;
+	padding:2px 0px 2px 0px;
+	line-height:normal;
+	text-indent:0;
+	border-right: none;
+	font-weight:bold;
+}
+
+.globalNavContainer a:link,
+.globalNavContainer a:visited {
+	font: 11px Arial, Helvetica, sans-serif;
+	padding:2px 5px 2px 5px;
+	color: #666666;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+.globalNavContainer  a:hover,
+.globalNavContainer  a:visited:hover  {
+	font: 11px Arial, Helvetica, sans-serif;
+	padding:2px 5px 2px 5px;
+	color: #ffffff;
+	background-color:#cc0000;
+	text-decoration: none;
+	font-weight:bold;
+}
+
+/* Breadcrumbs Starts
+-------------------------------------------------------------------------------------*/
+
+.breadcrumbContainer {
+	display:block;
+	float:left;
+	width:960px;
+	padding:0px 0px 0px 0px;
+	margin:0px 0px 0px 0px;
+}
+.breadcrumbs {
+	display:block;
+	float:left;
+	width:950px;
+	padding:6px 5px 25px 5px;
+	margin:0px 0px 0px 0px;
+	font-size:85%;
+	color:#333333;
+}
+
+.breadcrumbs a:link,
+.breadcrumbs a:visited {
+	color:#cc0000;
+	text-decoration:none;
+	background:url(/static/images/breadcrumb.gif) no-repeat center left;
+	padding:10px 5px 10px 10px;
+
+	
+}
+.breadcrumbs a:hover,
+.breadcrumbs a:visited:hover {
+	color:#cc0000;
+	text-decoration:underline;
+	background:url(/static/images/breadcrumb_on.gif) no-repeat center left;
+	padding:10px 5px 10px 10px;
+}
+.breadcrumbs li.end {
+	color:#333333;
+	text-decoration:none;
+	background:url(/static/images/breadcrumb.gif) no-repeat center left;
+	padding:0px 5px 0px 10px;
+
+}
+.breadcrumbs ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.breadcrumbs li {
+	margin:0;
+	padding:0px 5px 0px 0px;
+	list-style:none;
+	float:left;
+	background:none;
+}
+
+/* T1 Navigation
+-------------------------------------------------------------------------------------*/
+
+.t1NavContainer {
+	display:block;
+	float:left;
+	width:980px;
+	padding: 0px 0px 0px 0px;
+}
+.t1Nav {
+	display:block;
+	float:left;
+	width:100%;
+	
+}
+.t1Nav ul {
+	display:block;
+	float:left;
+	width:980px;
+	margin:0;
+	padding:0;
+	list-style:square none;
+	font-size: 11px;
+}
+.t1Nav li {
+	display:block;
+	float:left;
+	margin:0;
+	padding:0;
+	background:none;
+	line-height:normal;
+	text-indent:0;
+}
+.t1Nav li.end {
+	display:block;
+	float:left;
+	padding:9px 2px 9px;
+	border:solid #6ec82d;
+	border-width:0 0 0 0;
+	color:#fff;
+	white-space:nowrap;
+	background: url(/static/images/t1_nav.gif);
+	background-repeat: no-repeat;
+}
+.t1Nav a {
+	display:block;
+	float:left;
+	padding:9px 18px 9px;
+	border:solid #6ec82d;
+	border-width:0 0 0 0;
+	color:#fff;
+	font-size: 11px;
+	font-weight: bold;
+	text-decoration:none;
+	white-space:nowrap;
+	background: url(/static/images/t1_nav.gif);
+	background-repeat: no-repeat;
+}
+
+/* T2Nav Starts
+-------------------------------------------------------------------------------------*/
+
+.t2NavContainer {
+	display:block;
+	float:left;
+	width:170px;
+	padding: 0px 0px 25px 0px;
+}
+ul.t2Nav { 
+	display:block;
+	float:left;
+	width:170px;
+	margin: 0; 
+	padding: 0; 
+	border: none;
+	list-style: none;
+	list-style-image:none;	
+}
+ul.t2Nav li { 
+	display:block;
+	float:left;
+	height: 100%;
+	margin: 0; 
+	padding: 0; 
+	list-style:none;
+}
+ul.t2Nav li a:link,
+ul.t2Nav li a:visited{ 
+	display: block;
+	float:left;
+	width:150px;
+	border-top: 1px dotted #bcc6c1; 
+	border-bottom: 1px solid #f2f8fd;
+	padding: 6px 10px 6px 10px;
+	text-decoration: none;
+	color: #333333; 
+	background: none;
+	list-style:none;
+}
+ul.t2Nav li a:hover,
+ul.t2Nav li a:visited:hover { 
+	color: #ffffff; 
+	background: #3b7ba4;
+	list-style:none;
+	border-top: 1px dotted #bcc6c1; 
+	border-bottom: 1px solid #3b7ba4;
+}
+ul.t2Nav li.active a:link,
+ul.t2Nav li.active a:visited,
+ul.t2Nav li.active a:hover,
+ul.t2Nav li.active a:visited:hover { 
+	display: block;
+	float:left;
+	width: 150px;
+	border-top: 1px dotted #bcc6c1;
+	border-bottom: 1px solid #3b7ba4;
+	padding: 6px 10px 6px 10px;
+	text-decoration: none;
+	color: #ffffff; 
+	background: #3b7ba4; 
+	list-style:none;
+
+}
+ul.t2Nav li.end a:link,
+ul.t2Nav li.end a:visited { 
+	display: block;
+	float:left;
+	width: 150px;
+	border-top: 1px dotted #bcc6c1; 
+	border-bottom: 1px dotted #bcc6c1;
+	padding: 6px 10px 6px 10px;
+	text-decoration: none;
+	color: #333333; 
+	background: none;
+	list-style:none;
+
+}
+ul.t2Nav li.end a:hover,
+ul.t2Nav li.end a:visited:hover { 
+	display: block;
+	float:left;
+	width: 150px;
+	border-top: 1px dotted #bcc6c1; 
+	border-bottom: 1px dotted #bcc6c1;
+	padding: 6px 10px 6px 10px;
+	text-decoration: none;
+	color: #ffffff; 
+	background: #3b7ba4; 
+	list-style:none;
+}
+
+/* T3Nav Starts 
+-------------------------------------------------------------------------------------*/
+
+li.t3Nav ul {
+	display:block;
+	float:left;
+	width: 150px;
+	font-size: 12px;
+	margin: 0;
+	padding: 5px 0px 5px 20px;
+	border: none;
+	list-style: none;
+	list-style-image:none;
+	background-color: #ffffff;
+}
+li.t3Nav ul li { 
+	display:block;
+	float:left;
+	width: 150px;
+	margin: 0; 
+	padding: 0;
+	list-style:none;
+	border:none;
+}
+li.t3Nav ul li a:link,
+li.t3Nav ul li a:visited{ 
+	display:block;
+	float:left;
+	width: 140px;
+	border:none; 
+	padding: 3px 10px 3px 0px;
+	text-decoration: none;
+	color: #666666; 
+	background: #ffffff;
+	list-style:none;
+}
+li.t3Nav ul li a:hover,
+li.t3Nav ul li a:visited:hover { 
+	color: #3b7ba4; 
+	background: #ffffff; 
+	list-style:none;
+	border:none;
+}
+li.t3Nav ul li.active a:link,
+li.t3Nav ul li.active a:visited,
+li.t3Nav ul li.active a:hover,
+li.t3Nav ul li.active a:visited:hover { 
+	display:block;
+	float:left;
+	width: 140px;
+	background: #ffffff; 
+	color: #3b7ba4;
+	font-weight:bold; 
+	list-style:none;
+	padding: 3px 10px 3px 0px;
+	border:none;
+}
+
+/*#####################################################################################
+FOOTER STYLES
+#######################################################################################*/
+
+.footerContainer {
+	display:block;
+	float:left;
+	width: 960px;
+	padding: 40px 0px 20px 0px;
+	font-size:9px;
+	color: #999999;
+}
+.footerContainer .footerContent {
+	display:block;
+	float:left;
+	width: 960px;
+	padding:0px 0px 0px 0px;
+}
+.footerContainer .footerContent a:link,
+.footerContainer .footerContent a:visited {
+	font-size:9px;
+	text-decoration: none;
+	color: #999999;
+	padding: 0px 10px 0px 10px;
+}
+.footerContainer .footerContent a:hover, 
+.footerContainer .footerContent a:visited:hover {
+	font-size:9px;
+	text-decoration: none;
+	color: #fff;
+	padding: 0px 10px 0px 10px;
+}
+
+/*#####################################################################################
+FORM STYLES
+#######################################################################################*/
+
+input {
+	font: 12px Arial,Helvetica,sans-serif;
+	/*padding:2px 5px 2px 5px;*/
+	outline:none;
+}
+select {
+	font: 12px Arial,Helvetica,sans-serif;
+	padding:0px 0px 0px 0px;
+	height:20px;
+	outline:none;
+}
+select option {
+	font: 12px Arial,Helvetica,sans-serif;
+	padding:1px 0px 1px 2px;
+}
+textarea {
+	font: 12px Arial,Helvetica,sans-serif;
+	padding:2px 5px 2px 5px;
+	overflow:auto;
+	outline:none;
+}
+
+/*Stylized Form styles
+-------------------------------------------------------------------------------------*/
+
+input.checkBox {
+	color: #000000;
+	padding: 0;
+	background:none;
+}
+input.radio {
+	color: #000000;
+	padding: 0;
+	background:none;
+}
+input.milesInput {
+	font: 12px Arial,Helvetica,sans-serif;
+	/*padding:2px 5px 2px 5px;*/
+	outline:none;
+	width:30px;
+	text-align:center;
+	font-size:16px;
+}
+input.textFieldLarge {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 200px;
+	text-align:left;
+}
+input.textFieldMedium {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 150px;
+	text-align:left;
+}
+input.textFieldSmall {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 95px;
+	text-align:left;
+}
+select.selectBoxLarge {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 215px;
+	text-align:left;
+}
+select.selectBoxMedium {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 165px;
+	text-align:left;
+}
+select.selectBoxSmall {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 110px;
+	text-align:left;
+}
+textarea.textAreaLarge {
+	font: 12px Arial,Helvetica,sans-serif;
+	color: #666;
+	width: 205px;
+	text-align:left;
+}
+
+td.formLabel {
+	font-weight:normal;
+	text-align:left;
+	vertical-align:middle;
+	white-space:normal;
+	padding:4px 5px 4px 0px;
+}
+td.formLabel .req {
+	color: #990000;
+	font: 11px Arial,Helvetica,sans-serif;
+	vertical-align: top;
+}
+td.formError {
+	color: #990000;
+}
+td.formInput {
+	padding:4px 5px 4px 0px;
+	text-align:left;
+	vertical-align:top;
+	white-space:normal;
+}
+td.formBtn {
+	padding:10px 5px 10px 0px;
+	text-align:right;
+	vertical-align:top;
+	white-space:normal;
+}
+td.formInput label {
+	padding:0px 10px 0px 0px;
+}
+td.noPadding {
+	padding:0px 0px 0px 0px;
+}

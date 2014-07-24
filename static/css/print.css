@@ -1,0 +1,42 @@
+/* Add special print styles from main stylesheet */
+
+body {
+	width:650px !important;
+	margin:0 !important;
+	padding:0 !important;
+	line-height: normal;
+	font-family: Arial, Helvetica, sans-serif; 
+	color: #000; 
+	background:none;
+	float:none;
+}
+
+/* Override any inline div style -- Not Compatible with IE6 */
+div[style] {
+	width:650px !important;
+	float:none !important;
+}
+
+/* List Elements that should be hidden when printing (Example: Navigation, Left Coulumn, Buttons etc.) */
+.noPrint 
+{display: none;}
+
+/* Ensure the printable content spans the full page width (Example: Main Content) */
+.mainContent
+{width: 650px; float: none;}
+
+/* Removal of padding from certain elements to fit within page width (Do not exceed 650px width) */
+.mainContent
+{padding-left: 0px; padding-right: 0px;}
+
+/* Change text color to black and font to Arial (useful for light text on a dark background) */
+h1,h2,h3,h4,h5,h6,p
+{color: #000; font-family: Arial, Helvetica, sans-serif;}
+
+/* Improve color contrast of links (#0000FF = Hyperlink Blue) */
+a:link, a:visited
+{color: #0000FF}
+
+/* Start Custom Styles
+-------------------------------------------------------------- */
+
